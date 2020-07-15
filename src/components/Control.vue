@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import timer from "./Timer";
+import timer from "./Timer.vue";
 export default {
   components: {
     timer

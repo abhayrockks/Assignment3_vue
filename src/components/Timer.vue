@@ -1,6 +1,6 @@
 <template>
   <div class="timer">
-    <p v-if="tflag ? 'toggleTimer':'reset'">{{time}}</p>
+    <p>{{time}}{{display}}</p>
   </div>
 </template>
 
@@ -25,6 +25,16 @@ export default {
     },
     reset() {
       clearInterval(this.interval);
+    }
+  },
+
+  computed: {
+    display: function() {
+      if (this.tflag) {
+        return this.toggleTimer();
+      } else {
+        return this.reset();
+      }
     }
   }
 };
